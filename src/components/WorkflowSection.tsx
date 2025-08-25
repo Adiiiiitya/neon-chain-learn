@@ -104,39 +104,54 @@ const WorkflowSection = () => {
               Live Training Visualization
             </h3>
             
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              {/* Organizations */}
-              {[1, 2, 3].map((org) => (
-                <div key={org} className="text-center group">
-                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-accent/40 to-secondary/40 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
-                    <Database className="w-8 h-8 text-foreground" />
+            <div className="flex justify-center items-center gap-8 max-w-5xl mx-auto">
+              {/* Organizations Column */}
+              <div className="flex flex-col gap-6">
+                {[1, 2, 3].map((org) => (
+                  <div key={org} className="flex items-center gap-4 group">
+                    <div className="text-center">
+                      <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-accent/40 to-secondary/40 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <Database className="w-8 h-8 text-foreground" />
+                      </div>
+                      <div className="text-sm text-muted-foreground">Organization</div>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
                   </div>
-                  <div className="text-sm text-muted-foreground">Org {org}</div>
-                  <div className="mt-2">
-                    <ArrowRight className="w-4 h-4 text-primary mx-auto animate-pulse" />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
 
               {/* Central Blockchain */}
-              <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-pulse-glow">
-                  <Shield className="w-10 h-10 text-primary-foreground" />
+              <div className="flex items-center gap-8">
+                <div className="relative">
+                  <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-pulse-glow">
+                    <Shield className="w-10 h-10 text-primary-foreground" />
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground whitespace-nowrap">
+                    Blockchain
+                  </div>
                 </div>
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground whitespace-nowrap">
-                  Blockchain
+                <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
+              </div>
+
+              {/* Smart Contract */}
+              <div className="flex items-center gap-8">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-secondary/40 to-accent/40 flex items-center justify-center">
+                    <Cpu className="w-8 h-8 text-foreground" />
+                  </div>
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-muted-foreground whitespace-nowrap">
+                    Smart Contract
+                  </div>
                 </div>
+                <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
               </div>
 
               {/* Global Model */}
               <div className="text-center group">
-                <div className="mt-2 mb-2">
-                  <ArrowRight className="w-4 h-4 text-primary mx-auto animate-pulse" />
-                </div>
                 <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-primary/40 to-accent/40 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Globe className="w-8 h-8 text-foreground" />
                 </div>
-                <div className="text-sm text-muted-foreground">Global Model</div>
+                <div className="text-sm text-muted-foreground mt-2">Global Model</div>
               </div>
             </div>
           </div>

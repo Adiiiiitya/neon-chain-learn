@@ -60,22 +60,13 @@ const HeroSection = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex justify-center">
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-orbitron px-8 py-6 text-lg glow-effect group"
               >
                 Try Demo
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                className="neon-border bg-background/50 hover:bg-primary/10 font-orbitron px-8 py-6 text-lg group"
-              >
-                <Play className="mr-2 w-5 h-5 transition-transform group-hover:scale-110" />
-                Learn More
               </Button>
             </div>
           </div>
