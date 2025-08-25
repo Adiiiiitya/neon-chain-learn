@@ -104,16 +104,16 @@ const WorkflowSection = () => {
               Live Training Visualization
             </h3>
             
-            <div className="flex justify-center items-center gap-8 max-w-5xl mx-auto">
+            <div className="flex justify-center items-center gap-16 max-w-6xl mx-auto">
               {/* Organizations Column */}
               <div className="flex flex-col gap-6">
                 {[1, 2, 3].map((org) => (
-                  <div key={org} className="flex items-center gap-4 group">
+                  <div key={org} className="flex items-center gap-8 group">
                     <div className="text-center">
                       <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-accent/40 to-secondary/40 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                         <Database className="w-8 h-8 text-foreground" />
                       </div>
-                      <div className="text-sm text-muted-foreground">Organization</div>
+                      <div className="text-sm text-muted-foreground">Organization {org}</div>
                     </div>
                     <ArrowRight className="w-6 h-6 text-primary animate-pulse" />
                   </div>

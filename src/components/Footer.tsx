@@ -16,7 +16,8 @@ const Footer = () => {
     ],
     resources: [
       { label: "Documentation", href: "#" },
-      { label: "Research Papers", href: "#" },
+      { label: "Research Paper 1", href: "https://www.sciencedirect.com/science/article/abs/pii/S2452414X24002085" },
+      { label: "Research Paper 2", href: "https://www.mdpi.com/2076-3417/14/20/9459" },
       { label: "Blog", href: "#" },
       { label: "Community", href: "#" },
     ],
@@ -58,6 +59,16 @@ const Footer = () => {
               Revolutionizing AI training through blockchain-enabled federated learning. 
               Build smarter models while keeping your data private and secure.
             </p>
+            
+            {/* Contact Information */}
+            <div className="mb-6 space-y-2">
+              <div className="text-sm text-muted-foreground">
+                <span className="font-semibold">Phone:</span> <a href="tel:9119447853" className="hover:text-primary transition-colors">9119447853</a>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                <span className="font-semibold">Email:</span> <a href="mailto:kumar79aditya@gmail.com" className="hover:text-primary transition-colors">kumar79aditya@gmail.com</a>
+              </div>
+            </div>
             
             {/* Social Links */}
             <div className="flex space-x-4">
@@ -131,7 +142,7 @@ const Footer = () => {
           <div className="flex items-center text-sm text-muted-foreground">
             <span>Built with</span>
             <span className="text-red-500 mx-2 animate-pulse">❤️</span>
-            <span>at ETHGlobal Hackathon</span>
+            <span>at KuruKshetra Hackathon</span>
           </div>
         </div>
       </div>
