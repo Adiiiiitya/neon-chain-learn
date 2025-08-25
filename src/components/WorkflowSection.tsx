@@ -104,11 +104,11 @@ const WorkflowSection = () => {
               Live Training Visualization
             </h3>
             
-            <div className="flex justify-center items-center gap-16 max-w-6xl mx-auto">
+            <div className="flex justify-center items-center gap-24 max-w-6xl mx-auto">
               {/* Organizations Column */}
               <div className="flex flex-col gap-6">
                 {[1, 2, 3].map((org) => (
-                  <div key={org} className="flex items-center gap-8 group">
+                  <div key={org} className="flex items-center gap-12 group">
                     <div className="text-center">
                       <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-accent/40 to-secondary/40 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                         <Database className="w-8 h-8 text-foreground" />
@@ -121,7 +121,7 @@ const WorkflowSection = () => {
               </div>
 
               {/* Central Blockchain */}
-              <div className="flex items-center gap-8">
+              <div className="flex items-center gap-12">
                 <div className="relative">
                   <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-pulse-glow">
                     <Shield className="w-10 h-10 text-primary-foreground" />
