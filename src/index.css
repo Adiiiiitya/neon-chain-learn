@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Futuristic Blockchain Landing Page Design System */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Space Theme Colors - Dark Mode Primary */
+    --background: 240 10% 3.9%;
+    --foreground: 280 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 10% 7%;
+    --card-foreground: 280 15% 90%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 10% 7%;
+    --popover-foreground: 280 15% 90%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Neon Accent System */
+    --primary: 270 100% 70%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 270 100% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 100% 65%;
+    --secondary-foreground: 240 10% 3.9%;
+    --secondary-glow: 240 100% 80%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 190 100% 60%;
+    --accent-foreground: 240 10% 3.9%;
+    --accent-glow: 190 100% 75%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 280 10% 60%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 5% 20%;
+    --input: 240 5% 15%;
+    --ring: 270 100% 70%;
 
-    --radius: 0.5rem;
+    /* Cosmic Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 100% 20%), hsl(240 100% 25%), hsl(190 100% 30%));
+    --gradient-hero: radial-gradient(ellipse at center, hsl(270 100% 15%), hsl(240 100% 8%), hsl(240 10% 3.9%));
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 7% / 0.8), hsl(240 5% 10% / 0.9));
+    --gradient-glow: linear-gradient(90deg, hsl(270 100% 70%), hsl(240 100% 65%), hsl(190 100% 60%));
+
+    /* Shadows & Glows */
+    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(240 10% 2% / 0.8);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,12 +109,68 @@ All colors MUST be HSL.
   }
 }
 
+/* Custom Animations & Effects */
+@layer components {
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    background: var(--gradient-glow);
+    filter: blur(10px);
+    z-index: -1;
+  }
+  
+  .glow-effect:hover::before {
+    @apply opacity-30;
+  }
+
+  .neon-border {
+    @apply border border-primary/30 shadow-[0_0_10px_hsl(var(--primary)/0.3)] transition-all duration-300;
+  }
+  
+  .neon-border:hover {
+    @apply border-primary/60 shadow-[0_0_20px_hsl(var(--primary)/0.5)];
+  }
+
+  .cosmic-bg {
+    background: var(--gradient-hero);
+  }
+  
+  .cosmic-grid {
+    background-image: 
+      linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .orb-glow {
+    background: radial-gradient(circle, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    filter: blur(1px);
+    box-shadow: 
+      0 0 50px hsl(var(--primary) / 0.8),
+      0 0 100px hsl(var(--secondary) / 0.6),
+      0 0 150px hsl(var(--accent) / 0.4);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
   }
 }
